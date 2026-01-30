@@ -4,7 +4,7 @@ server:
 
 lavalink:
   server:
-    password: "youshallnotpass"
+    password: ${LAVALINK_PASSWORD:youshallnotpass}
     sources:
       youtube: false
       soundcloud: true
@@ -27,6 +27,10 @@ plugins:
     clients:
       - MUSIC
       - WEB
+      - ANDROID_MUSIC
+    oauth:
+      enabled: true
+      refreshToken: ${YOUTUBE_REFRESH_TOKEN:}
 
 logging:
   level:
