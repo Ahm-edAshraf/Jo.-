@@ -38,4 +38,5 @@ plugins:
 logging:
   level:
     root: INFO
-    lavalink: INFO
+    lavalink: DEBUG
+    dev.lavalink.youtube: DEBUG
