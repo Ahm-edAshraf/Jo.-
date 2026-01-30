@@ -13,9 +13,7 @@ lavalink:
       vimeo: true
       http: true
       local: false
-  plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
-      repository: "https://maven.lavalink.dev/releases"
+  # NO plugins section - we pre-load the JAR named as 1.16.0
 
 plugins:
   youtube:
