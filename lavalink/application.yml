@@ -24,10 +24,9 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      - MUSIC
-      - ANDROID_TESTSUITE
+      - WEB_REMIX
       - WEB
-      - TVHTML5EMBEDDED
+      - TVHTML5_SIMPLY_EMBEDDED_PLAYER
 
 logging:
   level:
