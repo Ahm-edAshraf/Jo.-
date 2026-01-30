@@ -13,9 +13,8 @@ lavalink:
       vimeo: true
       http: true
       local: false
-  plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
-      snapshot: false
+  # REMOVED plugins section - we pre-download the JAR in Dockerfile
+  # This prevents Lavalink from trying to "update" it
 
 plugins:
   youtube:
@@ -29,7 +28,6 @@ plugins:
       - IOS
     oauth:
       enabled: true
-      # When enabled, check Railway logs for the OAuth link (google.com/device)
 
 logging:
   level:
