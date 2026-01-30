@@ -13,7 +13,6 @@ lavalink:
       vimeo: true
       http: true
       local: false
-  # NO plugins section - we pre-load the JAR named as 1.16.0
 
 plugins:
   youtube:
@@ -22,11 +21,12 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      - MUSIC
-      - WEB
-      - WEBEMBEDDED
+      - ANDROID_MUSIC
+      - IOS
+      - TV
     oauth:
       enabled: true
+      # Set YOUTUBE_REFRESH_TOKEN env variable in Railway with the refresh token from the logs
 
 logging:
   level:
