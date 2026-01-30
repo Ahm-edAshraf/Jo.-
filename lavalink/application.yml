@@ -24,12 +24,10 @@ plugins:
     allowSearch: true
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
-    # Official recommended client order from docs
     clients:
       - MUSIC
-      - ANDROID_VR
-      - WEB
-      - WEBEMBEDDED
+      - TV
+      - TVHTML5EMBEDDED
     oauth:
       enabled: true
       refreshToken: ${YOUTUBE_REFRESH_TOKEN:}
