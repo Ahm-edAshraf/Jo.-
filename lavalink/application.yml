@@ -4,7 +4,7 @@ server:
 
 lavalink:
   server:
-    password: "${SERVER_PASSWORD:youshallnotpass}"
+    password: "youshallnotpass"
     sources:
       youtube: false
       soundcloud: true
@@ -14,7 +14,7 @@ lavalink:
       http: true
       local: false
   plugins:
-    - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.5"
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
       snapshot: false
 
 plugins:
