@@ -1,10 +1,10 @@
 server:
-  port: 2333
+  port: ${PORT:2333}
   address: 0.0.0.0
 
 lavalink:
   server:
-    password: "ahmed"
+    password: "youshallnotpass"
     sources:
       youtube: false
       soundcloud: true
@@ -25,18 +25,10 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      # Search-capable clients (queried first)
       - MUSIC
       - WEB
-      # OAuth-compatible clients for playback
-      - ANDROID_MUSIC
-      - IOS
-    oauth:
-      enabled: true
-      refreshToken: ${YOUTUBE_REFRESH_TOKEN:}
 
 logging:
   level:
     root: INFO
-    lavalink: DEBUG
-    dev.lavalink.youtube: DEBUG
+    lavalink: INFO
