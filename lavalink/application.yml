@@ -25,7 +25,7 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      - MUSIC
+      - WEB
       - TV
     oauth:
       enabled: true
@@ -35,3 +35,5 @@ logging:
   level:
     root: INFO
     lavalink: INFO
+    dev.lavalink.youtube: DEBUG
+
