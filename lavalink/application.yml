@@ -15,44 +15,10 @@ lavalink:
       local: false
 
   plugins:
-    # LavaSrc - Spotify, Deezer, Apple Music support
-    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.2.0"
-      repository: "https://maven.lavalink.dev/releases"
-    # YouTube source (keeping as fallback)
     - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
       repository: "https://maven.lavalink.dev/releases"
 
 plugins:
-  # LavaSrc configuration
-  lavasrc:
-    providers:
-      # Try to find track by ISRC first (most accurate)
-      - "ytsearch:\"%ISRC%\""
-      # Then fallback to regular search
-      - "ytsearch:%QUERY%"
-      - "scsearch:%QUERY%"
-    sources:
-      spotify: true
-      applemusic: false
-      deezer: true
-      yandexmusic: false
-      vkmusic: false
-      flowerytts: false
-      youtube: false
-    lyrics-sources:
-      spotify: true
-      deezer: true
-      youtube: false
-    spotify:
-      clientId: ${SPOTIFY_CLIENT_ID:}
-      clientSecret: ${SPOTIFY_CLIENT_SECRET:}
-      countryCode: "US"
-      playlistLoadLimit: 6
-      albumLoadLimit: 6
-    deezer:
-      masterDecryptionKey: ${DEEZER_MASTER_KEY:}
-
-  # YouTube source configuration (keeping for when it gets fixed)
   youtube:
     enabled: true
     allowSearch: true
@@ -70,3 +36,4 @@ logging:
   level:
     root: INFO
     lavalink: INFO
+    dev.lavalink.youtube: DEBUG
