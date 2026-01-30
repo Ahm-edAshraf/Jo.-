@@ -195,9 +195,45 @@ You’ll have **two services** on Railway: one for the **bot** and one for **Lav
    ```
 3. Ensure **`.env`** is **not** committed (add `.env` to `.gitignore` if it isn’t already).
 
+### Step 4.1a – If you can’t log in to Railway with GitHub
+
+**Try these first:**
+- Use a **private/incognito** window and try “Log in with GitHub” again.
+- **Clear cookies** for `railway.app` (or clear all for the site) and try again.
+- Try a **different browser** (e.g. Chrome if you use Edge, or vice versa).
+- Make sure **third‑party cookies** aren’t fully blocked (Railway’s GitHub login often needs them).
+- Check **[status.railway.app](https://status.railway.app)** (or their status page) in case login is down.
+
+**Option 1 – Log in with email instead (if Railway offers it)**  
+On the login page, see if there’s **“Log in with email”** or **“Sign up with email”**. Use that, then in **Account / Settings** you can try **“Connect GitHub”** later.
+
+**Option 2 – Deploy with Railway CLI (no GitHub link needed)**  
+You can deploy from your PC without connecting GitHub to Railway:
+
+1. Install the Railway CLI: **[railway.app/help/cli](https://docs.railway.app/guides/cli)**  
+   - Windows (PowerShell): `iwr https://railway.app/install.ps1 | iex`  
+   - Or: `npm install -g @railway/cli`
+2. In a terminal run: `railway login`  
+   - This opens the browser; log in with **email** (or GitHub if it works there). That way you get into Railway even if “Login with GitHub” on the main site fails.
+3. In your bot folder: `cd d:\botmusic`, then `railway init` (create/link a project) and `railway up` to deploy.  
+   - Set variables in the Railway dashboard (Project → Variables) or with `railway variables set DISCORD_TOKEN=your_token` etc.
+
+**Option 3 – Use Render instead of Railway**  
+If Railway login still doesn’t work, you can host the bot on **[Render](https://render.com)**:
+
+1. Sign up at **[render.com](https://render.com)** (they support GitHub and email).
+2. **New → Web Service**, connect your GitHub repo (or use “Build and deploy from a Git repository” and paste your repo URL).
+3. Set **Build Command** to `pip install -r requirements.txt` (or leave blank if you use a default Python env).
+4. Set **Start Command** to `python bot.py`.
+5. Add **Environment Variables**: `DISCORD_TOKEN`, `LAVALINK_HOST`, `LAVALINK_PORT`, `LAVALINK_PASSWORD`. (You’d still need Lavalink somewhere—e.g. run Lavalink locally for now, or host Lavalink on a free tier elsewhere; Render’s free tier can run the bot 24/7 with some limits.)
+
+Once you’re logged in (via email, CLI, or a different provider), continue with the steps below.
+
+---
+
 ### Step 4.2 – Create a Railway project and add the Lavalink service
 
-1. Go to **[railway.app](https://railway.app)** and log in (e.g. with GitHub).
+1. Go to **[railway.app](https://railway.app)** and log in (GitHub or email; see above if GitHub fails).
 2. Click **"New Project"**.
 3. Choose **"Deploy from GitHub repo"** and connect your GitHub account if asked.
 4. First we add **Lavalink** (so we can copy its internal URL for the bot):

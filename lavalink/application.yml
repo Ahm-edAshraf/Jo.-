@@ -4,7 +4,7 @@ server:
 
 lavalink:
   server:
-    password: "youshallnotpass"
+    password: "ahmed"
     sources:
       youtube: false
       soundcloud: true
@@ -24,9 +24,12 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
-      - WEB_REMIX
       - WEB
-      - TVHTML5_SIMPLY_EMBEDDED_PLAYER
+      - MWEB
+      - IOS
+    oauth:
+      enabled: true
+      # When enabled, check Railway logs for the OAuth link (google.com/device)
 
 logging:
   level:
