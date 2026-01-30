@@ -3,15 +3,13 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /opt/Lavalink
 
-# Download latest Lavalink (4.1.2) which doesn't have hardcoded plugin versions
+# Download Lavalink 4.1.2
 RUN apt-get update && apt-get install -y wget && \
     wget -O Lavalink.jar https://github.com/lavalink-devs/Lavalink/releases/download/4.1.2/Lavalink.jar && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Create plugins directory and download youtube-plugin 1.17.0
-RUN mkdir -p plugins && \
-    wget -O plugins/youtube-plugin-1.17.0.jar \
-    https://github.com/lavalink-devs/youtube-source/releases/download/1.17.0/youtube-plugin-1.17.0.jar
+# Create empty plugins directory - let Lavalink download the plugin itself
+RUN mkdir -p plugins
 
 # Copy our config
 COPY application.yml .
