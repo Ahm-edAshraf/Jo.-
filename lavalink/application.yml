@@ -13,8 +13,9 @@ lavalink:
       vimeo: true
       http: true
       local: false
-  # REMOVED plugins section - we pre-download the JAR in Dockerfile
-  # This prevents Lavalink from trying to "update" it
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.17.0"
+      repository: "https://maven.lavalink.dev/releases"
 
 plugins:
   youtube:
@@ -23,9 +24,9 @@ plugins:
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
     clients:
+      - MUSIC
       - WEB
-      - MWEB
-      - IOS
+      - WEBEMBEDDED
     oauth:
       enabled: true
 
