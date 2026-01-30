@@ -26,7 +26,7 @@ plugins:
       - TV
     oauth:
       enabled: true
-      # Set YOUTUBE_REFRESH_TOKEN env variable in Railway with the refresh token from the logs
+      refreshToken: ${YOUTUBE_REFRESH_TOKEN:}
 
 logging:
   level:
