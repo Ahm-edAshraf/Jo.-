@@ -24,9 +24,12 @@ plugins:
     allowSearch: true
     allowDirectVideoIds: true
     allowDirectPlaylistIds: true
+    # Official recommended client order from docs
     clients:
+      - MUSIC
+      - ANDROID_VR
       - WEB
-      - TV
+      - WEBEMBEDDED
     oauth:
       enabled: true
       refreshToken: ${YOUTUBE_REFRESH_TOKEN:}
@@ -36,4 +39,3 @@ logging:
     root: INFO
     lavalink: INFO
     dev.lavalink.youtube: DEBUG
-
